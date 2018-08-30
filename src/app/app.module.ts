@@ -8,7 +8,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
+import { MaterialModule } from "./modules/material.module";
 
 import { environment } from '../environments/environment';
 
@@ -21,9 +21,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase, "tv-show-bookmark"),
     AngularFireAuthModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
