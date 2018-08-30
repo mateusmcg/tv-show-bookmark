@@ -15,7 +15,7 @@ export class AppComponent {
   /**
    *
    */
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth) {
     console.debug("Current user: ", this.afAuth.auth.currentUser);
     this.afAuth.user.subscribe(user => {
       console.debug(user);
