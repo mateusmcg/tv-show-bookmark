@@ -5,6 +5,16 @@
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
 
+    <form class="searchForm" [formGroup]="searchForm">
+      <mat-form-field class="searchFormField">
+        <input type="text" matInput formControlName="queryField" [matAutocomplete]="auto">
+      </mat-form-field>
+
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option (onSelectionChange)="selectedShow(item)" *ngFor="let item of shows" [value]="item.show.title">{{item.show.title}} ({{item.show.year}})</mat-option>
+      </mat-autocomplete>
+    </form>
+
     <button mat-icon-button [mat-menu-trigger-for]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -20,6 +30,7 @@
     <div *ngIf="afAuth.user | async as user; else showLogin">
       <h1>Hello {{ user.displayName }}!</h1>
       <button mat-raised-button color="primary" (click)="googleLogOut()">Logout</button>
+      <button mat-raised-button color="accent" (click)="getShows()">Get Shows</button>
     </div>
     <ng-template #showLogin>
       <p>Please login.</p>

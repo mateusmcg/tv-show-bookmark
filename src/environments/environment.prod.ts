@@ -7,5 +7,6 @@ export const environment = {
     projectId: "tv-show-bookmark",
     storageBucket: "tv-show-bookmark.appspot.com",
     messagingSenderId: "883297663795"
-  }
+  },
+  traktTvBaseUrl: "https://api.trakt.tv"
 };
