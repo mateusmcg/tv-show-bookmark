@@ -10,10 +10,15 @@ import { environment } from '../environments/environment';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { AppRoutingModule } from './/app-routing.module';
+import { SearchComponent } from './components/search/search.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,8 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

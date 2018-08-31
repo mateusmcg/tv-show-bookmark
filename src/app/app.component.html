@@ -1,29 +1,8 @@
 <div>
-  <mat-toolbar color="primary">
-    <span>TvShowBookmark</span>
+  
+  <app-header></app-header>
 
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
-
-    <form class="searchForm" [formGroup]="searchForm">
-      <mat-form-field class="searchFormField">
-        <input type="text" matInput formControlName="queryField" [matAutocomplete]="auto">
-      </mat-form-field>
-
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option (onSelectionChange)="selectedShow(item)" *ngFor="let item of shows" [value]="item.show.title">{{item.show.title}} ({{item.show.year}})</mat-option>
-      </mat-autocomplete>
-    </form>
-
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Settings</button>
-    <button mat-menu-item>Help</button>
-    <button *ngIf="afAuth.user != null" mat-menu-item (click)="googleLogOut()">SignOut</button>
-  </mat-menu>
+  <router-outlet></router-outlet>
 
   <mat-card>
     <button flex mat-raised-button (click)="googleSignIn()">Google Sign In</button>

@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span routerLink="/">TvShowBookmark</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <form class="searchForm" [formGroup]="searchForm">
+    <mat-form-field class="searchFormField">
+      <input type="text" matInput [(ngModel)]="query" formControlName="queryField">
+      <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+
+  <button mat-icon-button [mat-menu-trigger-for]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+  <button mat-menu-item routerLink="/search">Search</button>
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Help</button>
+  <button *ngIf="afAuth.user != null" mat-menu-item (click)="googleLogOut()">SignOut</button>
+</mat-menu>
