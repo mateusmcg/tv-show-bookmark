@@ -8,5 +8,6 @@ export interface Show {
         imdb: string;
         tmdb: number;
         tvrage: number;
-    }
+    };
+    posterImageUrl: string;
 }
