@@ -1,3 +1,17 @@
-<p>
-  search works!
-</p>
+<mat-grid-list cols="4">
+  <mat-card *ngFor="let item of results">
+    <mat-card-header>
+      <mat-card-title>{{item.show.title}}</mat-card-title>
+      <mat-card-subtitle>Score: {{item.score}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{item.show.ids | json}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent">Add</button>
+      <button mat-raised-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-grid-list>

@@ -6,10 +6,10 @@
 
   <form class="searchForm" [formGroup]="searchForm">
     <mat-form-field class="searchFormField">
-      <input type="text" matInput [(ngModel)]="query" formControlName="queryField">
-      <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query=''">
+      <input type="text" matInput formControlName="queryField">
+      <!-- <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query=''">
         <mat-icon>close</mat-icon>
-      </button>
+      </button> -->
     </mat-form-field>
   </form>
 
@@ -23,3 +23,5 @@
   <button mat-menu-item>Help</button>
   <button *ngIf="afAuth.user != null" mat-menu-item (click)="googleLogOut()">SignOut</button>
 </mat-menu>
+
+{{shows}}
