@@ -12,4 +12,6 @@ export interface ShowTmdb {
     vote_count: number;
     name: string;
     original_name: string;
+    status: string;
+    type: string;
 }

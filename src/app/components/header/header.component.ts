@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
     this.searchForm
       .get('queryField')
       .valueChanges.pipe(
-        debounceTime(200)
+        debounceTime(300)
       )
       .subscribe(q => {
         this.router.navigate(['search', q]);

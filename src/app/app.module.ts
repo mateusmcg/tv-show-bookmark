@@ -14,12 +14,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchComponent } from './components/search/search.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ShowComponent } from './components/show/show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
