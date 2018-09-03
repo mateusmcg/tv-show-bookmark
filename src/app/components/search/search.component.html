@@ -1,15 +1,15 @@
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="start center" fxLayoutGap="1%">
-  <mat-card fxFlex="24%" class="card" *ngFor="let item of results">
+  <mat-card fxFlex="11.5%" class="card" *ngFor="let show of results">
+    <img mat-card-image src="https://image.tmdb.org/t/p/original{{show.poster_path}}" />
     <mat-card-header>
-      <mat-card-title>{{item.show.title}}</mat-card-title>
-      <mat-card-subtitle>Score: {{item.score}}</mat-card-subtitle>
+      <mat-card-title><b>{{show.name}}</b></mat-card-title>
+      <!-- <mat-card-subtitle>Score: </mat-card-subtitle> -->
     </mat-card-header>
-    <mat-card-content>
-      <img src="{{item.show.posterImageUrl}}" width="100px" height="100px" />
-    </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="accent">Add</button>
-      <button mat-raised-button>SHARE</button>
+      <button mat-raised-button mat-fab color="primary">
+          <mat-icon>add</mat-icon>
+      </button>
+      <button mat-button color="accent">DETAILS</button>
     </mat-card-actions>
   </mat-card>
 </div>

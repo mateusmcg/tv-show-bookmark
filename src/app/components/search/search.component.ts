@@ -6,6 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { TraktTvService } from '../../services/trakt-tv.service';
 import { SearchShow } from '../../models/search-show.interface';
 import { TmdbService } from '../../services/tmdb.service';
+import { SearchShowTmdb } from '../../models/tmdb/search-show-tmdb.interface';
+import { ShowTmdb } from '../../models/tmdb/show-tmdb.interface';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +17,7 @@ import { TmdbService } from '../../services/tmdb.service';
 })
 export class SearchComponent implements OnInit {
 
-  results: SearchShow[];
+  results: ShowTmdb[];
 
   constructor(private route: ActivatedRoute, private traktTv: TraktTvService, private tmdb: TmdbService) { }
 
@@ -24,16 +26,21 @@ export class SearchComponent implements OnInit {
   }
 
   loadSearch(query: string) {
-    this.traktTv.search(query).subscribe(results => {
+    this.tmdb.searchShows(query).subscribe(results => {
       console.log(results);
-      results.map(result => {
-        debugger;
-        this.tmdb.getShowImages(result.show.ids.tmdb).subscribe(showImages => {
-          result.show.posterImageUrl = 'https://image.tmdb.org/t/p/original' + showImages['posters'][0]['file_path'];
-        });
-      });
-      this.results = results;
+      this.results = results.results;
     });
+
+    // this.traktTv.search(query).subscribe(results => {
+    //   console.log(results);
+    //   results.map(result => {
+    //     debugger;
+    //     this.tmdb.getShowImages(result.show.ids.tmdb).subscribe(showImages => {
+    //       result.show.posterImageUrl = 'https://image.tmdb.org/t/p/original' + showImages['posters'][0]['file_path'];
+    //     });
+    //   });
+    //   this.results = results;
+    // });
   }
 
 }
