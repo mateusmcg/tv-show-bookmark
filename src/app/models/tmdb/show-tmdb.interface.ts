@@ -14,4 +14,5 @@ export interface ShowTmdb {
     original_name: string;
     status: string;
     type: string;
+    seasons: Array<object>;
 }
