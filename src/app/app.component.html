@@ -1,31 +1,21 @@
 <div>
-  <mat-toolbar color="primary">
-    <span>TvShowBookmark</span>
 
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
+  <app-header></app-header>
 
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Settings</button>
-    <button mat-menu-item>Help</button>
-    <button *ngIf="afAuth.user != null" mat-menu-item (click)="googleLogOut()">SignOut</button>
-  </mat-menu>
+  <router-outlet></router-outlet>
 
-  <mat-card>
+  <!-- <mat-card>
     <button flex mat-raised-button (click)="googleSignIn()">Google Sign In</button>
     <div *ngIf="afAuth.user | async as user; else showLogin">
       <h1>Hello {{ user.displayName }}!</h1>
       <button mat-raised-button color="primary" (click)="googleLogOut()">Logout</button>
+      <button mat-raised-button color="accent" (click)="getShows()">Get Shows</button>
     </div>
     <ng-template #showLogin>
       <p>Please login.</p>
       <button mat-raised-button color="accent" (click)="login()">Login with Google</button>
     </ng-template>
-  </mat-card>
+  </mat-card> -->
 
   <span class="done">
     <button mat-fab>

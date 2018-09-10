@@ -1,0 +1,12 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="start center" fxLayoutGap="0">
+  <mat-card fxFlex="12.5%" class="card clickable" *ngFor="let show of results" routerLink="/show/{{show.id}}">
+    <img *ngIf="!show?.poster_path" mat-card-image src="../../../assets/imgs/notfound.png" height="300px" title="{{show.name}}" />
+    <img *ngIf="show?.poster_path" mat-card-image src="https://image.tmdb.org/t/p/original{{show?.poster_path}}" height="300px"
+      title="{{show.name}}" />
+    <mat-card-content>
+      <p class="nowrap">
+        <b>{{show.name}}</b>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
