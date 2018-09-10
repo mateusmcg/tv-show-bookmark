@@ -7,7 +7,7 @@ import { MatTab } from '@angular/material/tabs';
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.css'],
+  styleUrls: ['./show.component.scss'],
   providers: [MatTab]
 })
 export class ShowComponent implements OnInit {

@@ -12,7 +12,7 @@ import { ShowTmdb } from '../../models/tmdb/show-tmdb.interface';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  styleUrls: ['./search.component.scss'],
   providers: [HeaderComponent, MatGridList]
 })
 export class SearchComponent implements OnInit {
