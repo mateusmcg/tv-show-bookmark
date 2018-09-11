@@ -1,4 +1,4 @@
-https://travis-ci.com/mateusmcg/tv-show-bookmark.svg?branch=master
+[![Build Status](https://travis-ci.com/mateusmcg/tv-show-bookmark.svg?branch=master)](https://travis-ci.com/mateusmcg/tv-show-bookmark)
 
 # TvShowBookmark
 
