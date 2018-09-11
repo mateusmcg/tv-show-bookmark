@@ -15,7 +15,7 @@ script:
   - npm run build-prod
 
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN --project tv-show-bookmark --only hosting
+  - firebase deploy --token $FIREBASE_TOKEN
 
 notifications:
   email:
